@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=auth-service/C:\/Users\/91707\/.m2\/repository\/io\/github\/openfeign\/feign-core\/11.10\/feign-core-11.10.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/io.github.openfeign=/=/maven.artifactId=/feign-core=/=/maven.version=/11.10=/=/maven.scope=/compile=/&lt;feign(RequestTemplate.class[RequestTemplate" modifiers="49" timestamp="1670512309256"/>
+    <typeInfo handle="=auth-service/C:\/Users\/91707\/.m2\/repository\/org\/springframework\/spring-webmvc\/5.3.24\/spring-webmvc-5.3.24.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-webmvc=/=/maven.version=/5.3.24=/=/maven.scope=/compile=/&lt;org.springframework.web.servlet(NoHandlerFoundException.class[NoHandlerFoundException" modifiers="33" timestamp="1670252571668"/>
+    <typeInfo handle="=api-gateway/C:\/Users\/91707\/.m2\/repository\/org\/springframework\/spring-web\/5.3.24\/spring-web-5.3.24.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-web=/=/maven.version=/5.3.24=/=/maven.scope=/compile=/&lt;org.springframework.http(HttpStatus.class[HttpStatus" modifiers="16433" timestamp="1670252572268"/>
+</typeInfoHistroy>

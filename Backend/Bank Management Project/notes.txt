@@ -1,0 +1,18 @@
+------------------------->/register
+{
+    "role":"ROLE_USER",
+    "firstName":"gbn",
+    "lastName":"stryker",
+    "gender":"MALE",
+    "dob":"14-06-1999",
+    "fatherName":"xyzz",
+    "contact":{
+        "phone":"7044833922",
+        "state":"odisha",
+        "city":"jk",
+        "district":"rgdaaa",
+        "pincode":"765001"
+    },
+    "username":"gbn123",
+    "password":"11111"
+}
