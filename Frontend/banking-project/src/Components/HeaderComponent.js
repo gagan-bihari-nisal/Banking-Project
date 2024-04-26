@@ -5,11 +5,6 @@ import { NavLink, Navbar, Nav } from 'react-bootstrap';
 
 export default class HeaderComponent extends Component {
 
-    // handleSelect=(e)=>{
-       
-    //     console.log(e)
-    // }
-
     render() {
         const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
         const active=window.location.pathname;

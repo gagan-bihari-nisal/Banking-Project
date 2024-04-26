@@ -30,7 +30,6 @@ export default class TransactionComponent extends Component {
         e.preventDefault()
         TransactionService.doTransaction(sessionStorage.getItem('token'), this.state.receiver, this.state.amount)
             .then(response => {
-                //   console.log(response.data)
                 this.setState({
                     isSuccess: true,
                     errorOccured: false
@@ -41,7 +40,6 @@ export default class TransactionComponent extends Component {
                     AuthenticationService.logout()
                     this.props.navigate(`/login`)
                 }
-                console.log(error.response.data.message)
                 this.setState({
                     errorOccured: true,
                     isSuccess: false,
@@ -62,7 +60,6 @@ export default class TransactionComponent extends Component {
                 })
             })
             .catch(error => {
-                console.log(error.response.data.message)
                 if (error.response.status === 403) {
                     AuthenticationService.logout()
                     this.props.navigate(`/login`)

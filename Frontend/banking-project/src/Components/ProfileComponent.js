@@ -47,10 +47,8 @@ export class ProfileComponent extends Component {
       pincode: this.state.pincode
     }
 
-    console.log("we are inside update")
     AuthService.updateUser(firstName, lastName, fatherName, gender, dob, contact, token)
       .then(response => {
-        console.log(response.data)
         this.refresh()
 
       }).catch(error => {
@@ -109,14 +107,11 @@ export class ProfileComponent extends Component {
 
   }
 
-
-
-
+  handleCancel = () => {
+    this.props.navigate(`/welcome`)
+  }
   render() {
     return (<>
-
-
-
       <div className="ProfilePage">
         <div className="container-fluid min-vh-100 bg-transparent">
           <div className="row px-5 py-4">
@@ -139,9 +134,6 @@ export class ProfileComponent extends Component {
                     </div>
                     <div className="col-md-5 border-right">
                       <div className="p-3 py-5">
-                        {/* <div className="d-flex justify-content-between align-items-center mb-3">
-                            <h3 className="card-title text-center  fw-bold fs-25">Edit Profile</h3>
-                          </div> */}
                         <div className='bg-dark text-light text-center p-3 text-uppercase mb-3' style={{ border: "1px solid #000000", padding: "5px", margin: "0px" }}>
                           Edit Profile
                         </div>
@@ -227,13 +219,14 @@ export class ProfileComponent extends Component {
                           </div>
                         </div>
 
-                        <div className=" text-center">
+                        <div className="text-center">
                           <div className="col">
                             <button name='update' type='submit' className="btn btn-success  text-uppercase fw-bold" >
                               Edit Profile
                             </button>
-
+                            <button type="button" className="mx-1 btn btn-secondary text-uppercase fw-bold" onClick={this.handleCancel}>Cancel</button>
                           </div>
+                          
                         </div>
                       </div>
                     </div>

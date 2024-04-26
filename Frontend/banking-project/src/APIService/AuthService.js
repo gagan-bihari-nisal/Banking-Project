@@ -4,7 +4,6 @@ export default new class AuthService {
 
 
     getHello() {
-        // console.log("get hello")
         return axios.get('http://localhost:1000/auth/hello')
     }
 

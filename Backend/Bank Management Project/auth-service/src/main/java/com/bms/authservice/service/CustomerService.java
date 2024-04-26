@@ -19,7 +19,6 @@ import com.bms.authservice.exception.BadCustomerException;
 import com.bms.authservice.model.CustomerDTO;
 import com.bms.authservice.model.DAOCustomer;
 import com.bms.authservice.reposiory.CustomerRepository;
-
 @Service
 public class CustomerService implements UserDetailsService {
 

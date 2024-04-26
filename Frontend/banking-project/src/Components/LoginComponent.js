@@ -29,7 +29,6 @@ export default class LoginComponent extends Component {
     loginClicked = (e) => {
         e.preventDefault();
         this.setState({ showProgress: true })
-        console.log("login")
         if (this.state.username === '' || this.state.password === '') {
             this.setState({ errorMsg: 'Every field is mandatory', hasLoginFailed: true })
         } else {
@@ -45,7 +44,6 @@ export default class LoginComponent extends Component {
                     this.setState({ showSuccessMessage: false })
                     this.setState({ hasLoginFailed: true })
                     this.setState({ errorMsg: error.response.data.message })
-                    // console.log(" there it is "+error.response.data.message)
                 })
         }
     }

@@ -16,7 +16,6 @@ export default class HistoryComponent extends Component {
     componentDidMount() {
         HistoryService.getAllHistory(sessionStorage.getItem('token'))
             .then(response => {
-                console.log(response)
                 this.setState({
                     history: response.data
                 })

@@ -43,8 +43,6 @@ export default class RegisterComponent extends Component {
     handleRegister = (e) => {
         this.setState({ showProgress: true })
         e.preventDefault()
-        console.log("register ")
-        //  console.log(this.state)
         if (this.state.password !== this.state.cpassword) {
             this.setState({
                 errorOccured: true,

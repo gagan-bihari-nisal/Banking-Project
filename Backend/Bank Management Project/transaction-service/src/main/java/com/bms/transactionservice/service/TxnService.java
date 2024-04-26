@@ -13,6 +13,7 @@ import com.bms.transactionservice.model.DAOCustomer;
 import com.bms.transactionservice.model.TxnDao;
 import com.bms.transactionservice.model.TxnDto;
 import com.bms.transactionservice.repository.TxnRepo;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TxnService {
@@ -24,20 +25,15 @@ public class TxnService {
 	@Autowired
 	CustomerService service;
 
+	@Transactional(rollbackFor = Exception.class)
 	public TxnDao saveTxn(TxnDto txn) throws Exception {
-		
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
-		
-		
 		ResponseEntity<DAOCustomer> customer = customersClient.getCustomer();
 		Long currentBalance =customersClient.balance();
-
-		System.out.println("----------"+customer.getBody().getCustomerId()+"---------------"); 
 		//check for transaction
 		if (txn.getAmount() > currentBalance) {
 			throw new BadTxnException("Account balance is not sufficient.");
 		}
-		
 		//check if reciever exists or not
 		if (!customersClient.customerExists(txn.getReciever())) {
 			throw new BadTxnException(txn.getReciever() + " is not found in our records.");
@@ -53,15 +49,10 @@ public class TxnService {
 		if(username.equals(newTxn.getReciever())) {
 			throw new BadTxnException("Sender and Reciever are the same. Hence, transaction is not possible. ");
 		}
-
 		customersClient.deposit(txn.getReciever(), txn.getAmount());
-
 		customersClient.withdraw(txn.getAmount());
-	//	customer.getBody().setBalance(customer.getBody().getBalance()-txn.getAmount());
 		service.saveCustomer(customer.getBody());
-
 		return txnRepo.save(newTxn);
-
 	}
 	
 	public List<TxnDao> getAllTxns(){
